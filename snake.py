@@ -6,6 +6,40 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
+def foodColor():
+    #Ramdomize food color on startup
+    number = randrange(1,5)
+    if(number == 1):
+        fColor = 'yellow'
+    if(number == 2):
+        fColor = 'blue'
+    if(number == 3):
+        fColor = 'magenta'
+    if(number == 4):
+        fColor = 'cyan'
+    if(number == 5):
+        fColor = 'pink'
+    return fColor
+
+fColor = foodColor()
+
+def snakeColor():
+    #Ramdomize snake color on startup
+    number = randrange(1,5)
+    if(number == 1):
+        sColor = 'gray'
+    if(number == 2):
+        sColor = 'black'
+    if(number == 3):
+        sColor = 'green'
+    if(number == 4):
+        sColor = 'violet'
+    if(number == 5):
+        sColor = 'brown'
+    return sColor
+
+sColor = snakeColor()
+
 def change(x, y):
     "Change snake direction."
     aim.x = x
@@ -14,6 +48,8 @@ def change(x, y):
 def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
+
+
 
 def move():
     "Move snake forward one segment."
@@ -31,15 +67,16 @@ def move():
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
+        foodColor()
     else:
         snake.pop(0)
 
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, sColor)
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, fColor)
     update()
     ontimer(move, 100)
 
