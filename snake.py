@@ -7,6 +7,10 @@ snake = [vector(10, 0)]
 aim = vector(0, -10)
 foodNewPos = vector(0, -10)
 
+"""
+   Comentario por Francisco Vázquez 
+"""
+
 def foodColor():
     #Ramdomize food color on startup
     number = randrange(1,5)
