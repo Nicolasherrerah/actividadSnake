@@ -1,3 +1,10 @@
+"""
+Equipo 2:
+Francisco Vázquez, A00827546
+Nicolás Herrera, A01114972
+Ana Paula López, A01378255
+"""
+
 from turtle import *
 from random import *
 from freegames import square, vector
